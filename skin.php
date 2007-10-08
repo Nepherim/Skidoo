@@ -10,41 +10,57 @@
  *    http://www.opensource.org/licenses/mit-license.php
  *    http://www.gnu.org/licenses/gpl.html
  */
-global $Skin, $SkinColor, $FmtPV, $SkinStyle, $Conditions, $LinkPageCreateFmt, $WikiLibDirs, $FPLTemplatePageFmt, $HTMLStylesFmt;
-global $EnableGUIButtons, $GUIButtons, $GUIButtonDirUrlFmt;
-global $LeftColumn, $RightColumn;
-global $PageStorePath;
-
+global $FmtPV;
 $FmtPV['$SkinName'] = '"Skidoo"';
 $FmtPV['$SkinVersion'] = '"1.0.1"';
 
-if($Skin == 'skidoo/PDA') {
-   $SkinStyle ='pda';
-} else {
-   $SkinStyle = 'normal';
-}
-
 ## Default color scheme
+global $SkinColor;
 if (isset($_GET['color'])) {
 	$SkinColor = $_GET['color'];
 } else {
 	SDV($SkinColor, 'darkblue');
 }
 
+global $action;
+$ActionSkin['print'] = 'skidoo';
+include_once("$SkinDir/cookbook/detect_mobile.php");
+if ($action == 'print' || detect_mobile_device()) {
+	# Enabled from config.php with: $ActionSkin['print'] = <skin_name>;
+	global $SkinStyle, $LinkPageExistsFmt, $UrlLinkTextFmt,
+		$GroupPrintHeaderFmt, $GroupPrintFooterFmt,
+		$GroupHeaderFmt, $GroupFooterFmt;
+
+   $SkinStyle ='pda';
+	$LinkPageExistsFmt = "<a class='wikilink' href='\$PageUrl?action=print'>\$LinkText</a>";
+	$UrlLinkTextFmt = "<cite class='urllink'>\$LinkText</cite> [<a class='urllink' href='\$Url'>\$Url</a>]";
+	SDV($GroupPrintHeaderFmt,'(:include $Group.GroupHeader:)(:nl:)');
+	SDV($GroupPrintFooterFmt,'(:nl:)(:include $Group.GroupFooter:)');
+	$GroupHeaderFmt = $GroupPrintHeaderFmt;
+	$GroupFooterFmt = $GroupPrintFooterFmt;
+
+	LoadPageTemplate($pagename,"$SkinDir/print/print.tmpl");
+	return;
+}
+
 # Condition used in Header to determine whether to display "menu" in the header.
+global $Conditions;
 $Conditions['skinstyle'] = "\$GLOBALS['SkinStyle']==\$condparm";
 
 ## Move any (:noleft:) or SetTmplDisplay('PageLeftFmt', 0); directives to variables for access in jScript.
+global $LeftColumn, $RightColumn;
 $FmtPV['$LeftColumn'] = "\$GLOBALS['TmplDisplay']['PageLeftFmt']";
 $FmtPV['$RightColumn'] = "\$GLOBALS['TmplDisplay']['PageRightFmt']";
 
 ## Add a custom page storage location
+global $PageStorePath, $WikiLibDirs;
 $PageStorePath = dirname(__FILE__)."/wikilib.d/{\$FullName}";
 $where = count($WikiLibDirs);
 if ($where>1) $where--;
 array_splice($WikiLibDirs, $where, 0, array(new PageStore($PageStorePath)));
 
 ## Search a Group.Templates page as well as the Site templates
+global $FPLTemplatePageFmt;
 SDV($FPLTemplatePageFmt, array('{$FullName}',
    "Site.Skidoo-LocalTemplates",
    "Site.LocalTemplates", "Site.PageListTemplates")
@@ -54,13 +70,16 @@ SDV($FPLTemplatePageFmt, array('{$FullName}',
 XLPage('en',"Site.Skidoo-XLPageLocal");
 
 ## Override pmwiki styles otherwise they will override styles declared in css
+global $HTMLStylesFmt;
 $HTMLStylesFmt['pmwiki'] = '';
 
 ## Define a link stye for new page links
+global $LinkPageCreateFmt;
 SDV($LinkPageCreateFmt, "<a class='createlinktext' href='\$PageUrl?action=edit'>\$LinkText</a>");
 
 ##  The following lines make additional editing buttons appear in the
 ##  edit page for subheadings, lists, tables, etc.
+global $EnableGUIButtons, $GUIButtons, $GUIButtonDirUrlFmt;
 SDV($EnableGUIButtons, 1);
 $GUIButtonDirUrlFmt = $SkinDirUrl.'/images/guiedit/';
 $GUIButtons['h2'] = array(100, '\\n!! ', '\\n', '$[Heading]',
