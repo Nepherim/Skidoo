@@ -1,0 +1,13 @@
+version=pmwiki-2.2.0-beta52 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.7) Gecko/20070914 Firefox/2.0.0.7
+author=
+charset=ISO-8859-1
+csum=
+ctime=1180451703
+host=127.0.0.1
+name=Site.Skidoo-LocalTemplates
+rev=16
+targets=
+text=Custom list formats%0a[@%0a[[#Skidoo_MRU_All_List]]%0a* [[{=$FullName} | {=$Group}: {=$Namespaced}]]%0a[[#Skidoo_MRU_All_Listend]]%0a@]%0a%0a[@%0a[[#Skidoo_MRU_Group_List]]%0a(:if exists {=$FullName}:)* [[{=$FullName} | {=$Namespaced}]](:ifend:)%0a[[#Skidoo_MRU_Group_Listend]]%0a@]%0a%0a[@%0a[[#Skidoo_MRU_Horiz]](:template each:)(:if exists {=$FullName}:)[[{=$FullName}|{=$Groupspaced}: {=$Namespaced}]] | (:ifend:)\%0a(:template last:)(:if exists {=$FullName}:)[[{=$FullName}|{=$Groupspaced}: {=$Namespaced}]](:ifend:)\%0a[[#Skidoo_MRU_Horizend]]%0a@]
+time=1191342831
+author:1191342831=
