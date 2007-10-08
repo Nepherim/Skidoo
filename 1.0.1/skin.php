@@ -1,36 +1,39 @@
 <?php if (!defined('PmWiki')) exit();
 /*
  * PmWiki Skidoo skin
- * Version 1.0.0  (1-Oct-07)
- * @requires PmWiki 2.1
+ * Version 1.0.1  (7-Oct-07)
+ * @requires PmWiki 2.2
  *
- * Examples at: http://pmwiki.com/Skins/Skidoo and http://solidgone.org/Skidoo/
+ * Examples at: http://pmwiki.com/Cookbook/Skidoo and http://skidoo.solidgone.com/
  * Copyright (c) 2007 David Gilbert
  * Dual licensed under the MIT and GPL licenses:
  *    http://www.opensource.org/licenses/mit-license.php
  *    http://www.gnu.org/licenses/gpl.html
  */
-global $SkinColor, $FmtPV, $SkinStyle, $Conditions, $LinkPageCreateFmt, $WikiLibDirs, $FPLTemplatePageFmt, $HTMLStylesFmt;
+global $Skin, $SkinColor, $FmtPV, $SkinStyle, $Conditions, $LinkPageCreateFmt, $WikiLibDirs, $FPLTemplatePageFmt, $HTMLStylesFmt;
 global $EnableGUIButtons, $GUIButtons, $GUIButtonDirUrlFmt;
 global $LeftColumn, $RightColumn;
 global $PageStorePath;
 
+$FmtPV['$SkinName'] = '"Skidoo"';
+$FmtPV['$SkinVersion'] = '"1.0.1"';
+
+if($Skin == 'skidoo/PDA') {
+   $SkinStyle ='pda';
+} else {
+   $SkinStyle = 'normal';
+}
+
 ## Default color scheme
 if (isset($_GET['color'])) {
-	SDV($SkinColor, $_GET['color']);
+	$SkinColor = $_GET['color'];
 } else {
 	SDV($SkinColor, 'darkblue');
 }
 
-$FmtPV['$SkinName'] = '"Skidoo"';
-$FmtPV['$SkinVersion'] = '"1.0.0"';
-if (preg_match('/Sunrise/', $_SERVER['HTTP_USER_AGENT'])) {
-   SDV($SkinStyle,'pda');
-} else {
-   SDV($SkinStyle,'normal');
-}
-
+# Condition used in Header to determine whether to display "menu" in the header.
 $Conditions['skinstyle'] = "\$GLOBALS['SkinStyle']==\$condparm";
+
 ## Move any (:noleft:) or SetTmplDisplay('PageLeftFmt', 0); directives to variables for access in jScript.
 $FmtPV['$LeftColumn'] = "\$GLOBALS['TmplDisplay']['PageLeftFmt']";
 $FmtPV['$RightColumn'] = "\$GLOBALS['TmplDisplay']['PageRightFmt']";
@@ -66,8 +69,6 @@ $GUIButtons['h3'] = array(110, '\\n!!! ', '\\n', '$[Subheading]',
                     '$GUIButtonDirUrlFmt/text_heading_3.png"$[Subheading Level 3]"');
 
 $GUIButtons['separator1'] = array(190, '', '', '', '$GUIButtonDirUrlFmt/separator.png');
-
-
 $GUIButtons['strong'] = array(200, "'''", "'''", '$[Bold]',
                   '$GUIButtonDirUrlFmt/text_bold.png"$[Bold]"',
                   '$[ak_strong]');
@@ -87,7 +88,6 @@ $GUIButtons['small'] = array(240, "'-", "-'", '$[Small text]',
                   '$GUIButtonDirUrlFmt/text_small.png"$[Small text]"');
 
 $GUIButtons['separator2'] = array(290, '', '', '', '$GUIButtonDirUrlFmt/separator.png');
-
 $GUIButtons['ol'] = array(300, '\\n# ', '\\n', '$[Ordered list]',
                     '$GUIButtonDirUrlFmt/text_list_bullets.png"$[Ordered (numbered) list]"');
 $GUIButtons['ul'] = array(310, '\\n* ', '\\n', '$[Unordered list]',
@@ -99,7 +99,6 @@ $GUIButtons['table'] = array(330,
                     '$GUIButtonDirUrlFmt/table_add.png"$[Table]"');
 
 $GUIButtons['separator3'] = array(390, '', '', '', '$GUIButtonDirUrlFmt/separator.png');
-
 $GUIButtons['center'] = array(400, '%25center%25', '', '',
                   '$GUIButtonDirUrlFmt/text_align_center.png"$[Center]"');
 $GUIButtons['right'] = array(410, '%25right%25', '', '',
@@ -107,10 +106,9 @@ $GUIButtons['right'] = array(410, '%25right%25', '', '',
 $GUIButtons['indent'] = array(420, '\\n->', '\\n', '$[Indented text]',
                     '$GUIButtonDirUrlFmt/text_indent.png"$[Indented text]"');
 $GUIButtons['outdent'] = array(430, '\\n-<', '\\n', '$[Hanging indent]',
-                    '$GUIButtonDirUrlFmt/text_indent_remove.png"$[Hanging indent]"');
+                  '$GUIButtonDirUrlFmt/text_indent_remove.png"$[Hanging indent]"');
 
 $GUIButtons['separator4'] = array(490, '', '', '', '$GUIButtonDirUrlFmt/separator.png');
-
 $GUIButtons['pagelink'] = array(500, '[[', ']]', '$[Page link]',
                   '$GUIButtonDirUrlFmt/house_link.png"$[Link to internal page]"');
 $GUIButtons['extlink'] = array(510, '[[', ']]', 'http:// | $[link text]',
@@ -121,8 +119,8 @@ $GUIButtons['thumb'] = array(530, '\%thumb\%[[Attach:', ' | Attach:image.jpg&quo
                   '$GUIButtonDirUrlFmt/photos.png"$[Attach an image as a thumbnail]"');
 
 $GUIButtons['separator5'] = array(590, '', '', '', '$GUIButtonDirUrlFmt/separator.png');
-$GUIButtons['page_edit'] = array(610, '\\n(:skidooTabEdit:)\\n', '', '',
-                  '$GUIButtonDirUrlFmt/edit.gif"$[Markup used within a page to place an edit icon.]"');
+#$GUIButtons['page_edit'] = array(610, '\\n(:skidooTabEdit:)\\n', '', '',
+#                  '$GUIButtonDirUrlFmt/edit.gif"$[Markup used within a page to place an edit icon.]"');
 $GUIButtons['author'] = array(640, '~~~', '', '',
                   '$GUIButtonDirUrlFmt/text_signature.png"$[Add author name]"');
 $GUIButtons['authordate'] = array(650, '~\'\'~~~~\'\' ', '', '',

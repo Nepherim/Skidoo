@@ -7,13 +7,14 @@
 	<link rel='stylesheet' href='$SkinDirUrl/color-$SkinColor.css' type='text/css' />
 	<!--[if lt IE 7]>
 		<link rel="stylesheet" type="text/css" href="$SkinDirUrl/javascript/corners/iehacks_lt7.css" />
+		<style type="text/css">
+		#contentHeader { 
+			}
+		</style>
 	<![endif]-->
 	<!--[if IE 7]>
 		<link rel="stylesheet" type="text/css" href="$SkinDirUrl/javascript/corners/iehacks_7.css" />
 	<![endif]-->
-
-	<!-- Add your Google developer API key, replacing AAA below -->
-<!-- 	<script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAAmOhHqrEO6jsuTU5-n1AIrhT2yXp_ZAY8_ufC3CFXhHIE1NvwkxS1Y3Yn2getQ7kKY5wF7CO7O5AObQ"></script> -->
 
 	<script type="text/javascript" src="$SkinDirUrl/javascript/jquery-1.1.4.pack.js"></script>
 	<script type="text/javascript" src="$SkinDirUrl/javascript/corners/jquery.corners.js"></script>
@@ -23,7 +24,6 @@
 	<script type="text/javascript" src="$SkinDirUrl/javascript/jquery.interface.js"></script>
 	<script type="text/javascript" src="$SkinDirUrl/javascript/{$SkinName}.js"></script>
 	<script type="text/javascript">pm_SkinDir = '$SkinDirUrl'; pm_SkinName = '{$SkinName}'; pm_Site = '{$SiteGroup}'; pm_LeftCol = '{$LeftColumn}'; pm_RightCol = '{$RightColumn}'; </script>
-<!-- Google key for localhost:8002: ABQIAAAAmOhHqrEO6jsuTU5-n1AIrhQa1lX9CefVZD3IpnGUGNeipf1d_xSd-efP8eLEcpCeBw4K7XceO0TkuA -->
 
 <!--HTMLHeader-->
 </head>
@@ -68,7 +68,7 @@
 					<!--wiki:{$SiteGroup}.{$SkinName}-ContentHeader-->
 				</div>
 	
-				<div id="middleColumn" class="inside">									 	<!-- begin: middle column content -->
+				<div id="middleColumn" class="inside">				<!-- begin: middle column content -->
 					<!--PageText-->
 				</div>														<!-- end: middle column content -->	
 			</div>

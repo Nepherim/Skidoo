@@ -14,14 +14,14 @@ body {
 	font-family: arial, helvetica, sans-serif;
 	font-size: 75%;		/* arial looks better with a smaller size */
 	margin: 0;
-	min-width: 500px;	/* IE doens't understand this property */
+	min-width: 500px;					/* IE doens't understand this property */
 	width: auto;
    }
 * html #pageWrapper {
-	word-wrap: break-word;	/* invalid CSS but keeps IE from breaking horribly under narrow viewports */
+	word-wrap: break-word;			/* invalid CSS but keeps IE from breaking horribly under narrow viewports */
    }
 #outerColumnContainer {
-	border-width: 0 11em;	/* side border widths must equal the widths of the left and right columns. */
+	border-width: 0 11em;			/* side border widths must equal the widths of the left and right columns. */
    border-style: solid;
 	z-index: 1;
    }
@@ -36,9 +36,10 @@ body {
    border-top-style: solid;
    }
 #centerColumn {
-	border-width: 0 1px;    	/* puts borders between middle and the side columns. */
-	border-style: dashed;   	/* puts borders between middle and the side columns. */
-	margin: 0 -1px;	   		/* compensate for the borders because of 100% width declaration */
+	border-width: 0 1px;    		/* puts borders between middle and the side columns. */
+	border-left-style: dashed;   	/* puts borders between middle and the side columns. */
+	border-right-style: dashed;   /* puts borders between middle and the side columns. */
+	margin: 0 -1px;	   			/* compensate for the borders because of 100% width declaration */
 	width: 100%;
 	z-index: 2;
    }
@@ -55,32 +56,32 @@ html[xmlns] .mozclear {
    }
 #leftColumn, #rightColumn, #contentColumn {
 	float: left;
-	overflow: visible;	/* fix for IE italics bug */
+	overflow: visible;				/* fix for IE italics bug */
 	position: relative;
 	z-index: 10;
    }
 #leftColumn {
-	margin: 0 1px 0 -11em;	/* the margin on the side the column is to be
+	margin: 0 1px 0 -11em;			/* the margin on the side the column is to be
 				   rendered on must be the negative equal of 
 				   the column's width. The opposite border must
 				   be 1px */
 	width: 11em;
    }
 #rightColumn {
-	float: right;	/* doesn't have to be floated right, but if using some original skidoo tweaks, you need it this way */
-	margin: 0 -11em 0 1px;	/* same as in the #leftColumn but reversed */
+	float: right;						/* doesn't have to be floated right, but if using some original skidoo tweaks, you need it this way */
+	margin: 0 -11em 0 1px;			/* same as in the #leftColumn but reversed */
    width: 11em;
    }
 #rightColumn .inside, #leftColumn .inside  {
    padding-left: 10px;
    padding-top: 0.8em;
-	font-size: 85%;	/* because the parent element ( #rightColumn )
+	font-size: 85%;					/* because the parent element ( #rightColumn )
 			   defines its width in EMs, we can't change the font 
 			   size in that selector, otherwise the column won't use
 			   the entire width reserved for the column */
    }
 #contentColumn {
-	margin: 0 -1px;		/* required to get the negative margin-based
+	margin: 0 -1px;					/* required to get the negative margin-based
 				   layout to work. if #contentColumn does not
 				   overlap the left and right columns, then
 				   the whole layout will break */
@@ -88,7 +89,7 @@ html[xmlns] .mozclear {
    }
 #footer {
    border-style: solid;
-	border-width: 1px 0;	/* border for bottom of layout and top of footer area */
+	border-width: 1px 0;				/* border for bottom of layout and top of footer area */
 	margin: 0pt;
 	position: relative;
    }
@@ -96,7 +97,7 @@ html[xmlns] .mozclear {
 	clear: both;
    }
 .inside {
-	padding: 0 1em;	/* glitch in IE caused by vertical padding in
+	padding: 0 1em;					/* glitch in IE caused by vertical padding in
 				   this class, so 0 padding is set here and
 				   those blocks that need the vertical padding
 				   must be applied to the parent element.
@@ -107,10 +108,10 @@ html[xmlns] .mozclear {
 				   element, just not horizontal padding. */
    }
 #leftColumn, #contentColumn, #rightColumn {
-	padding-bottom: 2em;	/* this is the vert padding talked about in the .inside selector comment. */
+	padding-bottom: 2em;				/* this is the vert padding talked about in the .inside selector comment. */
    }
 #siteHeader, #footer {
-	padding: 0.5em;	/* ditto from above */
+	padding: 0.5em;					/* ditto from above */
    }
 
 /* --------- Container Hacks ----------- */
@@ -148,7 +149,7 @@ a:hover {
 
 /* --------- PmWiki Style Overrides ----------- */
 ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
-pre { font-size: 110%; }
+.varlink, pre, code.escaped { font-size: 120%; }
 code.escaped { white-space: nowrap; }
 .vspace { margin-top:1.33em; }
 .indent { margin-left:40px; }
@@ -184,58 +185,44 @@ img { border:0px; }
 	padding-left: 20px;
    }
 #searchBar form {
-   display: inline;   /* prevents IE padding out the navbar */
+   display: inline;   		/* prevents IE padding out the navbar */
    }
 	
 /* --------- Tabs ----------- */
 .tabs-hide {
 	display: none;
 	}
-.tabs-nav {
-    list-style: none;
-    margin: 0;
-	}
 .tabHolder {
-	height: 27px;
-	padding-left: 6px;
-   border-bottom-style: solid;
-   border-bottom-width: 1px;
+	height: 15px;				/* IE6 need any height, but deterimes height by the internal objects */
+	padding: 12px 0 0 4px;	/* IE6 needs height 10px */
+   border-bottom: 1px solid;
 	}
 .tabHolder ul { 
-   padding-left: 10px;
-   margin-left: -10px;
+   padding: 0;
+   margin: 0;					/* needed for IE */
    }
+.tabs-nav {
+   list-style: none;
+	}
 .tabs-nav li {
    float: left;
-   margin: 12px 2px 0 0;
+   margin-right: 1px;
 	}
 .tabs-nav a {
-	position: relative; /* fixes top border in IE */
-   font-size: 11px;
+	zoom: 1;				  		/* fix tabs opacity and top margin IE */
+   font-size: 90%;
    text-align: center;
-   text-decoration: none;
-   padding:0 5px 0px 5px;
+   padding: 0px 4px;
 	}
-.tabs-nav .tabs-selected a, .tabs-nav a:hover, .tabs-nav a:focus, .tabs-nav a:active {
+.tabs-nav .tabs-selected a, .tabs-nav a:active, .tabs-nav a:hover, .tabs-nav a:focus {
    cursor: pointer;
-   border-width: 2px 0 1px 0;
-	border-style: solid none solid none;
+   border-top: 2px solid;
+   border-bottom: 1px solid;
 	}
 .tabs-nav a:hover, .tabs-nav a:focus {
-	float: left;		/* needs to float for opacity in IE */
 	filter: alpha(opacity=75);
 	-moz-opacity: 0.75;
 	opacity: 0.75;
-	}
-.tabs-nav .tabs-selected a:link, .tabs-nav .tabs-selected a:visited,
-.tabs-nav .tabs-disabled a:link, .tabs-nav .tabs-disabled a:visited { /* @ Opera, use pseudo classes otherwise it confuses cursor... */
-   cursor: text;
-	}
-.tabs-nav .tabs-disabled {
-   opacity: 0.4;
-	}
-.tabs-container {
-   clear: both;
 	}
 
 /* --------- Wiki Action Commands ----------- */
@@ -243,11 +230,14 @@ img { border:0px; }
 	float: right; 
 	margin-top: 2px;
 	font-size: 70%;
-	padding-right: 25px;
+	padding-right: 1.2em;
+	text-align: right;
+	width: 240px;
    }
 .wikiCmds ul { 
 	list-style: none; 
-	display: inline; 	/* same as margin and padding of 0 */
+	margin: 0;
+	padding: 0;
    }  
 .wikiCmds li { 
 	display: inline; 
@@ -258,15 +248,17 @@ img { border:0px; }
 #contentHeader { 
 	float: left; 
 	height: 18px;
-	padding:8px 0 1px 10px; 
+	width: 100%;             /* Needed for Safari */
+	padding:8px 0 1px 0; 
 	font-size: 1.2em; 
-	font-weight: bold; 
    border-bottom-style: solid;
    border-width: 1px;
-	margin-bottom: 15px;
+	margin-bottom: 1em;
    }
 #contentTitle {
+	font-weight: bold; 
 	float: left;
+	padding-left: .7em;
    }
 
 /* --------- Wiki Page Formatting ----------- */
@@ -366,28 +358,27 @@ a.createlinktext{
    width: 12px;
    padding: 6px 6px;
 	border-bottom: none;
+	cursor: pointer;
 	}
 
 /* --------- Section Edit ----------- */
 .sectionedit {
-	margin-right: -15px;
    float: right; 
 	display: none;
    }
 .sectionedit a {
+   background: url(images/edit.png) center right no-repeat;
+   height: 14px;
+   width: 14px;
 	border-bottom: none;
+	text-decoration: none;
+	margin-right: 5px;
+	margin-top: 1px;
 	}
 .sectionEditImg, .skidooTabEdit {
 	position: relative;
    display: block;
    padding: 4px 4px;
-   }
-.sectionEditImg {
-   background: url(images/edit.png) center right no-repeat;
-   height: 14px;
-   width: 14px;
-	margin-right: 5px;
-	margin-top: 1px;
    }
 .skidooTabEdit {
    background: url(images/edit-sm.png) center right no-repeat;
@@ -398,8 +389,8 @@ a.createlinktext{
 	}
 .skidooTabEdit a {
 	padding: 10px 10px 5px 10px;
-	text-decoration: none;
 	border-bottom: none;
+	text-decoration: none;
 	}
 	
 /* --------- Google Tabs ----------- */

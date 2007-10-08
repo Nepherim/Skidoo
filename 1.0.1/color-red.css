@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6 {
 	border-top-color: #f04342;
 	}
 #wikitext .quickref {
-   background-color: #f5f9ea;
+   background-color: #fdfdfa;
    }
 
 /* --------- Site Header ----------- */
@@ -44,12 +44,12 @@ h1, h2, h3, h4, h5, h6 {
    background-color: #f04342;  
    }
 #contentTitle p, #contentTitle a, .wikiCmds li a {
-   color: #f5f9ea;
+   color: #fdfdfa;
    }
 
 /* --------- Left/Right Columns ----------- */
 #outerColumnContainer {
-   border-left-color: #fdfdfa;   /* left hand column background color (#f5f9ea) */
+   border-left-color: #fdfdfa;   /* left hand column background color (#fdfdfa) */
    border-right-color: #fdfdfa;  /* right hand column background color */
    }
 #rightColumn .inside, #rightColumn .inside a, 
@@ -62,13 +62,13 @@ h1, h2, h3, h4, h5, h6 {
    border-color: #d3d3d3;  	/* Should match color [2] */
    }
 .tabHolder, .tabs-nav a {
-   color: #f5f9ea;
+   color: #fdfdfa;
    background-color: #f04342;  
    }
 .tabs-nav .tabs-selected a, .tabs-nav a:hover, .tabs-nav a:focus, .tabs-nav a:active {
    color: #000;
-   background-color: #f5f9ea;	/* [1] */
-   border-color: #f5f9ea;		/* Should match color [1] */
+   background-color: #fdfdfa;	/* [1] */
+   border-bottom-color: #fdfdfa;		/* Should match color [1] */
 	border-top-color: #ff9900;
    }
 
@@ -77,7 +77,7 @@ h1, h2, h3, h4, h5, h6 {
    background-color: #f04342;  
    }
 #footer, #footer p, #footer a {
-   color: #f5f9ea;
+   color: #fdfdfa;
    }
 
 /* --------- Borders -------------*/
