@@ -1,0 +1,13 @@
+version=pmwiki-2.2.0-beta52 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.7) Gecko/20070914 Firefox/2.0.0.7
+author=
+charset=ISO-8859-1
+csum=
+ctime=1180445734
+host=127.0.0.1
+name=Site.Skidoo-Header
+rev=12
+targets=Site.SideBar,Project1.Main,Project2.Main
+text=(:comment Use this top bar for links to current projects :)%0a(:if skinstyle pda :)[[{$SiteGroup}.SideBar | Menu]] | (:ifend:)\%0a(:comment Suggested Format:)'''[[Project1/Main | Project 1]] | [[Project2/Main | Project 2]] | ... '''%0a(:include {$SiteGroup}.{$SkinName}-MostRecent:)%0a
+time=1191354544
+author:1191354544=
