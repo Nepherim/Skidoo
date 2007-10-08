@@ -1,9 +1,9 @@
 /*
  * PmWiki Skidoo skin
- * Version 1-Oct-07 (1.0.0)
+ * Version 1.0.1  (7-Oct-07)
  * @requires PmWiki 2.2
  *
- * Examples at: http://pmwiki.com/Skins/Skidoo and http://solidgone.org/Skidoo/
+ * Examples at: http://pmwiki.com/Cookbook/Skidoo and http://skidoo.solidgone.com/
  * Copyright (c) 2007 David Gilbert
  * Dual licensed under the MIT and GPL licenses:
  *    http://www.opensource.org/licenses/mit-license.php

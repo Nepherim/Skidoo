@@ -85,10 +85,12 @@ $(document).ready(function(){
 	tabClick('left');  tabClick('right');
 	
 	var txt = $('#text');
-	EDIT_COOKIE = pm_SkinName + '_edit_height';      // global to allow skin to reset cookie.
 
 // On edit pages allow resizing of edit textbox
 	if (txt[0]) {
+		EDIT_COOKIE = pm_SkinName + '_edit_height';      // global to allow skin to reset cookie.
+		txt.after('<div id=\'resizeS\'></div>');
+		$('#resizeS').width(txt.width());
 	   txt.focus()
 		   .Resizable({
 			   handlers: {
@@ -99,7 +101,6 @@ $(document).ready(function(){
 			.width(txt.width())		// Bug in interface (shows in IE) with w/h set as percentage values, so force update width to a px value.
 			.height( parseInt($.cookie(EDIT_COOKIE)) || 385 );
 
-		$('#resizeS').width(txt.width())
 		   
 // On non-edit pages allow double click to edit on specific regions of the page
 	} else {
@@ -128,7 +129,7 @@ $(document).ready(function(){
 	});
 // -----------------------	*/
 
-// Set focus to searchbox if it's present
+// Set focus to searchbox if it's present -- only on the main detailed search page.
 	$('#wikitext .searchbox').focus();
 
 // Setup the table of contents, if the container div exists
