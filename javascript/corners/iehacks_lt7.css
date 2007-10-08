@@ -1,0 +1,5 @@
+/* Serve gif images to IE/Win pre version 7 */
+.cb_borderL, .cb_borderR { background-image:url(borders.gif); }
+.cb_borderT, .cb_borderT div, .cb_borderB, .cb_borderB div { background-image:url(box.gif); }
+/* Set a height to fix up some rendering issues. */
+.cb_borderL, .cb_borderR { height:1px; }
