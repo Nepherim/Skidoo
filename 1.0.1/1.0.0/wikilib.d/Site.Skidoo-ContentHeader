@@ -1,0 +1,13 @@
+version=pmwiki-2.2.0-beta52 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.7) Gecko/20070914 Firefox/2.0.0.7
+author=
+charset=ISO-8859-1
+csum=
+ctime=1182193302
+host=127.0.0.1
+name=Site.Skidoo-contentHeader
+rev=6
+targets=Site.Main
+text=(:div id="contentTitle":)%0a[[{*$Group}/{$DefaultName} | {*$Groupspaced}]]: {*$Namespaced}%0a(:divend:)%0a(:div class="wikiCmds":)%0a(:include {$SiteGroup}.PageActions:)%0a(:divend:)
+time=1191344269
+author:1191344269=

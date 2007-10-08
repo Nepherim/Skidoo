@@ -1,0 +1,13 @@
+version=pmwiki-2.2.0-beta52 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.7) Gecko/20070914 Firefox/2.0.0.7
+author=
+charset=ISO-8859-1
+csum=
+ctime=1191354382
+host=127.0.0.1
+name=Site.Skidoo-MostRecent
+rev=1
+targets=
+text=(:pagelist trail={$SiteGroup}.AllRecentChanges count=5 list=normal fmt=#Skidoo_MRU_Horiz:)
+time=1191354382
+author:1191354382=

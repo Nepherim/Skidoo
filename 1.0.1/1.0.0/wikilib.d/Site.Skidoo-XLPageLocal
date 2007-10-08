@@ -1,0 +1,13 @@
+version=pmwiki-2.2.0-beta47 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.3) Gecko/20070309 Firefox/2.0.0.3
+author=
+charset=ISO-8859-1
+csum=
+ctime=1180445103
+host=
+name=Site.Skidoo-XLPageLocal
+rev=2
+targets=
+text=### Strings for SectionEdit%0a'(Edit Section &#x2193;)' => ' ',
+time=1180445120
+author:1180445120=
