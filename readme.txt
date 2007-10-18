@@ -1,6 +1,6 @@
 /*
  * PmWiki Skidoo skin
- * Version 1.0.1  (7-Oct-07)
+ * Version 1.0.3  (18-Oct-07)
  * @requires PmWiki 2.2
  *
  * Examples at: http://pmwiki.com/Cookbook/Skidoo and http://skidoo.solidgone.com/

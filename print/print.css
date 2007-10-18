@@ -45,3 +45,4 @@ a.createlink { color:#444444; }
 a.createlink:visited { color:#444444; }
 a.createlink:hover { color:#ff2222; }
 
+.sectionedit {display: none; visibility:hidden;}

@@ -1,7 +1,7 @@
 <?php if (!defined('PmWiki')) exit();
 /*
  * PmWiki Skidoo skin
- * Version 1.0.1  (7-Oct-07)
+ * Version 1.0.3  (18-Oct-07)
  * @requires PmWiki 2.2
  *
  * Examples at: http://pmwiki.com/Cookbook/Skidoo and http://skidoo.solidgone.com/
@@ -12,7 +12,7 @@
  */
 global $FmtPV;
 $FmtPV['$SkinName'] = '"Skidoo"';
-$FmtPV['$SkinVersion'] = '"1.0.1"';
+$FmtPV['$SkinVersion'] = '"1.0.3"';
 
 ## Default color scheme
 global $SkinColor;
@@ -23,21 +23,14 @@ if (isset($_GET['color'])) {
 }
 
 global $action;
-$ActionSkin['print'] = 'skidoo';
 include_once("$SkinDir/cookbook/detect_mobile.php");
 if ($action == 'print' || detect_mobile_device()) {
 	# Enabled from config.php with: $ActionSkin['print'] = <skin_name>;
-	global $SkinStyle, $LinkPageExistsFmt, $UrlLinkTextFmt,
-		$GroupPrintHeaderFmt, $GroupPrintFooterFmt,
-		$GroupHeaderFmt, $GroupFooterFmt;
+	global $SkinStyle, $LinkPageExistsFmt, $UrlLinkTextFmt;
 
    $SkinStyle ='pda';
 	$LinkPageExistsFmt = "<a class='wikilink' href='\$PageUrl?action=print'>\$LinkText</a>";
 	$UrlLinkTextFmt = "<cite class='urllink'>\$LinkText</cite> [<a class='urllink' href='\$Url'>\$Url</a>]";
-	SDV($GroupPrintHeaderFmt,'(:include $Group.GroupHeader:)(:nl:)');
-	SDV($GroupPrintFooterFmt,'(:nl:)(:include $Group.GroupFooter:)');
-	$GroupHeaderFmt = $GroupPrintHeaderFmt;
-	$GroupFooterFmt = $GroupPrintFooterFmt;
 
 	LoadPageTemplate($pagename,"$SkinDir/print/print.tmpl");
 	return;
