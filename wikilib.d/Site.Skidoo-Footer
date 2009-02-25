@@ -8,6 +8,6 @@ host=127.0.0.1
 name=Site.Skidoo-Footer
 rev=10
 targets=
-text=(:div style="text-align:right":)%0a[-[[http://pmwiki.com/Skins/{$SkinName} | {$SkinName}-{$SkinVersion}]]-]%0a[-[[http://pmwiki.com/wiki/PmWiki/ChangeLog | {$Version}]]-]%0a(:divend:)
+text=(:div style="text-align:right":)%0a[-[[http://pmwiki.com/Cookbook/{$SkinName} | {$SkinName}-{$SkinVersion}]]-]%0a[-[[http://pmwiki.com/wiki/PmWiki/ChangeLog | {$Version}]]-]%0a(:divend:)
 time=1185992359
 author:1185992359=

@@ -1,11 +1,8 @@
 <?php if (!defined('PmWiki')) exit();
-/*
- * PmWiki Skidoo skin
- * Version 1.0.3  (18-Oct-07)
- * @requires PmWiki 2.2
+/* PmWiki Skidoo skin
  *
- * Examples at: http://pmwiki.com/Cookbook/Skidoo and http://skidoo.solidgone.com/
- * Copyright (c) 2007 David Gilbert
+ * Examples at: http://pmwiki.com/Cookbook/Skidoo and http://solidgone.com/Skins/
+ * Copyright (c) 2009 David Gilbert
  * Dual licensed under the MIT and GPL licenses:
  *    http://www.opensource.org/licenses/mit-license.php
  *    http://www.gnu.org/licenses/gpl.html
@@ -13,14 +10,6 @@
 global $FmtPV;
 $FmtPV['$SkinName'] = '"Skidoo"';
 $FmtPV['$SkinVersion'] = '"1.0.3"';
-
-## Default color scheme
-global $SkinColor;
-if (isset($_GET['color'])) {
-	$SkinColor = $_GET['color'];
-} else {
-	SDV($SkinColor, 'darkblue');
-}
 
 global $action;
 include_once("$SkinDir/cookbook/detect_mobile.php");
@@ -36,22 +25,6 @@ if ($action == 'print' || detect_mobile_device()) {
 	return;
 }
 
-# Condition used in Header to determine whether to display "menu" in the header.
-global $Conditions;
-$Conditions['skinstyle'] = "\$GLOBALS['SkinStyle']==\$condparm";
-
-## Move any (:noleft:) or SetTmplDisplay('PageLeftFmt', 0); directives to variables for access in jScript.
-global $LeftColumn, $RightColumn;
-$FmtPV['$LeftColumn'] = "\$GLOBALS['TmplDisplay']['PageLeftFmt']";
-$FmtPV['$RightColumn'] = "\$GLOBALS['TmplDisplay']['PageRightFmt']";
-
-## Add a custom page storage location
-global $PageStorePath, $WikiLibDirs;
-$PageStorePath = dirname(__FILE__)."/wikilib.d/{\$FullName}";
-$where = count($WikiLibDirs);
-if ($where>1) $where--;
-array_splice($WikiLibDirs, $where, 0, array(new PageStore($PageStorePath)));
-
 ## Search a Group.Templates page as well as the Site templates
 global $FPLTemplatePageFmt;
 SDV($FPLTemplatePageFmt, array('{$FullName}',
@@ -62,11 +35,42 @@ SDV($FPLTemplatePageFmt, array('{$FullName}',
 ## Use internationalization template for alternative Section Edit text
 XLPage('en',"Site.Skidoo-XLPageLocal");
 
-## Override pmwiki styles otherwise they will override styles declared in css
+# Condition used in Header to determine whether to display "menu" in the header.
+global $Conditions;
+$Conditions['skinstyle'] = "\$GLOBALS['SkinStyle']==\$condparm";
+
+## Move any (:noleft:) or SetTmplDisplay('PageLeftFmt', 0); directives to variables for access in jScript.
+global $LeftColumn, $RightColumn;
+$FmtPV['$LeftColumn'] = "\$GLOBALS['TmplDisplay']['PageLeftFmt']";
+$FmtPV['$RightColumn'] = "\$GLOBALS['TmplDisplay']['PageRightFmt']";
+
+# ----------------------------------------
+# - Standard Skin Setup
+# ----------------------------------------
+$FmtPV['$WikiTitle'] = '$GLOBALS["WikiTitle"]';
+
+# Define a link stye for new page links
+global $LinkPageCreateFmt;
+SDV($LinkPageCreateFmt, "<a class='createlinktext' href='\$PageUrl?action=edit'>\$LinkText</a>");
+
+# Default color scheme
+global $SkinColor, $ValidSkinColors;
+if ( !is_array($ValidSkinColors) ) $ValidSkinColors = array();
+array_push($ValidSkinColors, 'darkblue');
+if ( isset($_GET['color']) && in_array($_GET['color'], $ValidSkinColors) ) {
+	$SkinColor = $_GET['color'];
+} elseif ( !in_array($SkinColor, $ValidSkinColors) ) {
+	$SkinColor = 'darkblue';
+}
+
+# Override pmwiki styles otherwise they will override styles declared in css
 global $HTMLStylesFmt;
 $HTMLStylesFmt['pmwiki'] = '';
 
-## Define a link stye for new page links
-global $LinkPageCreateFmt;
-SDV($LinkPageCreateFmt, "<a class='createlinktext' href='\$PageUrl?action=edit'>\$LinkText</a>");
+# Add a custom page storage location
+global $WikiLibDirs;
+$PageStorePath = dirname(__FILE__)."/wikilib.d/{\$FullName}";
+$where = count($WikiLibDirs);
+if ($where>1) $where--;
+array_splice($WikiLibDirs, $where, 0, array(new PageStore($PageStorePath)));
 
