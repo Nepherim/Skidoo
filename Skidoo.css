@@ -26,7 +26,7 @@ body {
 	z-index: 1;
    }
 * html #outercolumncontainer {
-	/* IE5.0/Win fix for 1px whitespace between siteHeader and body. 
+	/* IE5.0/Win fix for 1px whitespace between siteHeader and body.
 	 * The case-incorrect selector is on purpose. IE5.0 and IE5.5 are
 	 * case insensitive and I'm targeting IE 5.0. 5.5 doesn't get hurt
 	 * by this extra margin work.
@@ -62,7 +62,7 @@ html[xmlns] .mozclear {
    }
 #leftColumn {
 	margin: 0 1px 0 -11em;			/* the margin on the side the column is to be
-				   rendered on must be the negative equal of 
+				   rendered on must be the negative equal of
 				   the column's width. The opposite border must
 				   be 1px */
 	width: 11em;
@@ -76,7 +76,7 @@ html[xmlns] .mozclear {
    padding-left: 10px;
    padding-top: 0.8em;
 	font-size: 85%;					/* because the parent element ( #rightColumn )
-			   defines its width in EMs, we can't change the font 
+			   defines its width in EMs, we can't change the font
 			   size in that selector, otherwise the column won't use
 			   the entire width reserved for the column */
    }
@@ -101,7 +101,7 @@ html[xmlns] .mozclear {
 				   this class, so 0 padding is set here and
 				   those blocks that need the vertical padding
 				   must be applied to the parent element.
-				   the purpose of this class is to provide 
+				   the purpose of this class is to provide
 				   horizontal padding without using hacks to
 				   get around IE's broken box model. so it's
 				   okay to apply vertical padding to the parent
@@ -128,21 +128,21 @@ html[xmlns] .mozclear {
 	font-family: Georgia,"Trebuchet MS","Times New Roman",serif;
 	line-height:150%;
    }
-#leftColumn .inside ul, #rightColumn .inside ul { 
+#leftColumn .inside ul, #rightColumn .inside ul {
    padding-left: 10px;
    margin-left: 9px;
    line-height: 1.4em;
    }
 /* ---------  ----------- */
 input {
-   font-size:90%; 
+   font-size:90%;
 	border-width:1px;
 	padding:1px;
    }
 a {
 	text-decoration:none;
    }
-a:hover { 
+a:hover {
    border-bottom-style: dotted;
    border-bottom-width:1px;
    }
@@ -151,6 +151,7 @@ a:hover {
 ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
 .varlink, pre, code.escaped { font-size: 120%; }
 code.escaped { white-space: nowrap; }
+pre {overflow:auto;}
 .vspace { margin-top:1.33em; }
 .indent { margin-left:40px; }
 .outdent { margin-left:40px; text-indent:-40px; }
@@ -177,17 +178,17 @@ img { border:0px; }
    float: right;
    padding-top: 6px;
    }
-#searchBar .searchBox { 
+#searchBar .searchBox {
 	background-image: url(images/magnifier.gif);
 	background-position: left center;
-	background-repeat: no-repeat; 
+	background-repeat: no-repeat;
 	padding: 2px;
 	padding-left: 20px;
    }
 #searchBar form {
    display: inline;   		/* prevents IE padding out the navbar */
    }
-	
+
 /* --------- Tabs ----------- */
 .tabs-hide {
 	display: none;
@@ -197,7 +198,7 @@ img { border:0px; }
 	padding: 12px 0 0 4px;	/* IE6 needs height 10px */
    border-bottom: 1px solid;
 	}
-.tabHolder ul { 
+.tabHolder ul {
    padding: 0;
    margin: 0;					/* needed for IE */
    }
@@ -226,37 +227,37 @@ img { border:0px; }
 	}
 
 /* --------- Wiki Action Commands ----------- */
-.wikiCmds { 
-	float: right; 
+.wikiCmds {
+	float: right;
 	margin-top: 2px;
 	font-size: 70%;
 	padding-right: 1.2em;
 	text-align: right;
 	width: 240px;
    }
-.wikiCmds ul { 
-	list-style: none; 
+.wikiCmds ul {
+	list-style: none;
 	margin: 0;
 	padding: 0;
-   }  
-.wikiCmds li { 
-	display: inline; 
-	margin: 0px 3px; 
    }
-	
+.wikiCmds li {
+	display: inline;
+	margin: 0px 3px;
+   }
+
 /* --------- Content Header ----------- */
-#contentHeader { 
-	float: left; 
+#contentHeader {
+	float: left;
 	height: 18px;
 	width: 100%;             /* Needed for Safari */
-	padding:8px 0 1px 0; 
-	font-size: 1.2em; 
+	padding:8px 0 1px 0;
+	font-size: 1.2em;
    border-bottom-style: solid;
    border-width: 1px;
 	margin-bottom: 1em;
    }
 #contentTitle {
-	font-weight: bold; 
+	font-weight: bold;
 	float: left;
 	padding-left: .7em;
    }
@@ -291,14 +292,14 @@ img { border:0px; }
 	border-style: dotted;
 	border-width: 1px;
    font-size: 80%;
-	font-family: Arial; 
-	padding: 2px; 
+	font-family: Arial;
+	padding: 2px;
    margin-bottom: 20px;
    }
-.wikimessage { 
-	margin-top: 4px; 
-	margin-bottom: 4px; 
-	font-style: italic; 
+.wikimessage {
+	margin-top: 4px;
+	margin-bottom: 4px;
+	font-style: italic;
    }
 a.createlinktext{
    background: url(images/new_page.png) top right no-repeat;
@@ -311,13 +312,13 @@ a.createlinktext{
    border-left-width: 1px;
 	border-left-style: dotted !important;
 	}
-	
+
 /* --------- Wiki Edit Page Formatting ----------- */
-#wikiedit { 
+#wikiedit {
 	font-family: Arial,"sans serif";
 	}
-#wikiedit textarea { 
-	width: 99%; 
+#wikiedit textarea {
+	width: 99%;
 	height: 385px;
 	font-size: 110%
    }
@@ -330,7 +331,7 @@ a.createlinktext{
 #resizeS {
 	height: 6px;
 	line-height: 6px;
-	background: url(images/s-handle.gif) top center no-repeat; 
+	background: url(images/s-handle.gif) top center no-repeat;
 	overflow: hidden;
 	cursor: s-resize;
 	margin: -1px 0 15px 1px;
@@ -363,7 +364,7 @@ a.createlinktext{
 
 /* --------- Section Edit ----------- */
 .sectionedit {
-   float: right; 
+   float: right;
 	display: none;
    }
 .sectionedit a {
@@ -392,15 +393,15 @@ a.createlinktext{
 	border-bottom: none;
 	text-decoration: none;
 	}
-	
+
 /* --------- Google Tabs ----------- */
-.gfc-control .gfc-resultsHeader .gfc-title { 
-	font-size: medium; 
-	font-weight: bold; 
-	color: #d09f78 
+.gfc-control .gfc-resultsHeader .gfc-title {
+	font-size: medium;
+	font-weight: bold;
+	color: #d09f78
 	}
-.gfc-control div { 
-	font-family: arial, sans-serif; 
+.gfc-control div {
+	font-family: arial, sans-serif;
 	}
 
 /* --------- User Styles ----------- */
