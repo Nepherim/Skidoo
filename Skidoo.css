@@ -6,7 +6,7 @@
 
 /* --------- Basic Page Layout Definitions ----------- */
 body {
-	font-size: 130.1%;
+	font-size: 108.1%;
 	margin: 0;
 	padding: 1em 3em 3em 3em;		/* remove this to stretch the layout */
    }
@@ -194,7 +194,7 @@ img { border:0px; }
 	display: none;
 	}
 .tabHolder {
-	height: 15px;				/* IE6 need any height, but deterimes height by the internal objects */
+	height: 18px;				/* IE6 need any height, but deterimes height by the internal objects */
 	padding: 12px 0 0 4px;	/* IE6 needs height 10px */
    border-bottom: 1px solid;
 	}
@@ -218,7 +218,7 @@ img { border:0px; }
 .tabs-nav .tabs-selected a, .tabs-nav a:active, .tabs-nav a:hover, .tabs-nav a:focus {
    cursor: pointer;
    border-top: 2px solid;
-   border-bottom: 1px solid;
+   border-bottom: 5px solid;
 	}
 .tabs-nav a:hover, .tabs-nav a:focus {
 	filter: alpha(opacity=75);
@@ -248,7 +248,7 @@ img { border:0px; }
 /* --------- Content Header ----------- */
 #contentHeader {
 	float: left;
-	height: 18px;
+	height: 21px;
 	width: 100%;             /* Needed for Safari */
 	padding:8px 0 1px 0;
 	font-size: 1.2em;
@@ -336,6 +336,9 @@ a.createlinktext{
 	cursor: s-resize;
 	margin: -1px 0 15px 1px;
 	width: 97%;
+	}
+.quickref br {
+	display: none;
 	}
 
 /* --------- Table of Contents ----------- */
