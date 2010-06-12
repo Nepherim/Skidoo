@@ -9,7 +9,8 @@
  */
 global $FmtPV;
 $FmtPV['$SkinName'] = '"Skidoo"';
-$FmtPV['$SkinVersion'] = '"1.0.3"';
+$FmtPV['$SkinVersion'] = '"1.0.6"';
+$FmtPV['$SkinDate'] = '"20100612"';
 
 global $action;
 include_once("$SkinDir/cookbook/detect_mobile.php");

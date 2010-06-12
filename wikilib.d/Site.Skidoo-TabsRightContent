@@ -9,5 +9,3 @@ name=Site.Skidoo-TabsRightContent
 rev=2
 targets=
 text=(:include {$SiteGroup}.Skidoo-Tabs#rightTabs#rightTabsEnd:)
-time=1180445440
-author:1180445440=

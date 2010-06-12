@@ -9,5 +9,3 @@ name=Site.Skidoo-Header
 rev=12
 targets=Site.SideBar,Project1.Main,Project2.Main
 text=(:comment Use this top bar for links to current projects :)%0a(:if skinstyle pda :)[[{$SiteGroup}.SideBar | Menu]] | (:ifend:)\%0a(:comment Suggested Format:)'''[[Project1/Main | Project 1]] | [[Project2/Main | Project 2]] | ... '''%0a(:include {$SiteGroup}.{$SkinName}-MostRecent:)%0a
-time=1191354544
-author:1191354544=

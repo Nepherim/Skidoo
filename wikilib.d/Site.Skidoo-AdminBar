@@ -7,7 +7,5 @@ ctime=1180445306
 host=127.0.0.1
 name=Site.Skidoo-AdminBar
 rev=17
-targets=Site.Skidoo-Tabs,Site.SideBar,Site.Skidoo-Header,Site.Skidoo-ContentHeader,Site.Skidoo-MostRecent,Site.Skidoo-Footer,Site.Skidoo-LocalTemplates,Site.Skidoo-XLPageLocal,Site.Skidoo-AdminBar
+targets=
 text=Side Bars%0a* [[{$SiteGroup}/Skidoo-Tabs?action=edit | Tabs]]%0a* [[{$SiteGroup}/SideBar?action=edit | Site Bar]]%0a* [[{$Group}/SideBar?action=edit | Group Bar]]%0a%0aHeader/Footer%0a* [[{$SiteGroup}/Skidoo-Header?action=edit | Header]]%0a* [[{$SiteGroup}/Skidoo-ContentHeader?action=edit | Content Header]]%0a* [[{$SiteGroup}/Skidoo-MostRecent?action=edit | Most Recent List]]%0a* [[{$SiteGroup}/Skidoo-Footer?action=edit | Footer]]%0a%0aSite Pages%0a* [[{$SiteGroup}/Skidoo-LocalTemplates?action=edit | Local Templates]]%0a* [[{$SiteGroup}/Skidoo-XLPageLocal?action=edit | XLPage]]%0a* [[{$SiteGroup}/Skidoo-AdminBar?action=edit | Admin]]%0a
-time=1191357002
-author:1191357002=

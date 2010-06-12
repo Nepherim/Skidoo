@@ -9,5 +9,3 @@ name=Site.Skidoo-MostRecent
 rev=1
 targets=
 text=(:pagelist trail={$SiteGroup}.AllRecentChanges count=5 list=normal fmt=#Skidoo_MRU_Horiz:)
-time=1191354382
-author:1191354382=

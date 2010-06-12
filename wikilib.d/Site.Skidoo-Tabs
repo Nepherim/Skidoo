@@ -9,5 +9,3 @@ name=Site.Skidoo-Tabs
 rev=25
 targets=
 text=>>comment%3c%3c%0aEach DIV represents a tab. The DIV title will be used as the tab text, and the content of the DIV will be the content of the tab.%0aA DIV with an id="{$SkinName}-TOC" will become a clickable Table of Contents.%0a>>%3c%3c%0a%0a[@%0a[[#leftTabs]]%0a(:div title="site":)%0a(:include {$SiteGroup}.SideBar:)%0a(:divend:)%0a(:div title="group":)%0a(:include {$Group}.SideBar:)%0a(:divend:)%0a(:div title="admin":)%0a(:include {$SiteGroup}.{$SkinName}-AdminBar:)%0a(:divend:)%0a[[#leftTabsEnd]]%0a%0a[[#rightTabs]]%0a(:div title="TOC" id="{$SkinName}-TOC":)&nbsp;%0a(:divend:)%0a(:div title="group":)%0a'''{$Group}'''%0a(:pagelist group=-{$SiteGroup},-PmWiki trail={$SiteGroup}.AllRecentChanges count=40 list=normal fmt=#Skidoo_MRU_Group_List group={$Group}:)%0a(:divend:)%0a(:div title="all":)%0a(:pagelist group=-{$SiteGroup},-PmWiki trail={$SiteGroup}.AllRecentChanges count=40 list=normal fmt=#Skidoo_MRU_All_List:)%0a(:divend:)%0a[[#rightTabsEnd]]%0a@]
-time=1191342904
-author:1191342904=
